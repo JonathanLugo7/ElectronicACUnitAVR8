@@ -16,7 +16,7 @@ namespace WorkerService {
                           MinimumLevel.Override("Microsoft", LogEventLevel.Warning).
                           Enrich.FromLogContext().
                           WriteTo.File(
-                             @"X:\Development\IoT SolucioneX\ElectronicAAUnitAVR8\SerialPortService\service.log",
+                             @"..\ElectronicAAUnitAVR8\SerialPortService\service.log",
                              fileSizeLimitBytes: 1_000_000,
                              rollOnFileSizeLimit: true,
                              shared: true,

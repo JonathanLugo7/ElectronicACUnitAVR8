@@ -2,7 +2,7 @@
  * LCD.h
  *
  * Created: 12/12/2016 2:46:09 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #ifndef LCD_H_

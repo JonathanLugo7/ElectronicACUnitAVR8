@@ -2,7 +2,7 @@
  * USART.c
  *
  * Created: 7/7/2016 12:38:51 a. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //--- Includes ---//
@@ -95,9 +95,9 @@ void USARTInit(USART_OPMODE opMode, USART_PARITY_MODE parityMode, USART_STOP_BIT
 
    // Baud rate calculation Asynchronous
    // Normal Mode (U2Xn = 0).  BAUD  = (Fcpu / 16 * UBRRn) + 1
-   //                          UBRRn = (Fcpu / 16 * BAUD) – 1
+   //                          UBRRn = (Fcpu / 16 * BAUD) ï¿½ 1
    // Double Speed (U2Xn = 1). BAUD  = (Fcpu / 8 * UBRRn) + 1
-   //                          UBRRn = (Fcpu / 8 * BAUD) – 1
+   //                          UBRRn = (Fcpu / 8 * BAUD) ï¿½ 1
    // Example: U2Xn=0. UBBRn = 160000000 / 16 * 19200 - 1 = 51
    // UBRRxH = (uint8_t) (UBRR >> 8);
    // UBRRxL = (uint8_t) UBRR;

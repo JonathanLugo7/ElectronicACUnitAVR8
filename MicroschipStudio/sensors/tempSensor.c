@@ -2,7 +2,7 @@
  * TempSensor.c
  *
  * Created: 4/3/2017 4:03:39 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //-- Includes --//
@@ -59,7 +59,7 @@ static float TSGetTemperatureBeta(uint16_t tsChannel, uint16_t fixedR0, uint16_t
    DESCRIPTION: Read passenger compartment air temperature sensor
 
    PARAMETERS: void
-   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30°..50°] C / [-22°..122°] F
+   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30ï¿½..50ï¿½] C / [-22ï¿½..122ï¿½] F
 *** */
 int8_t TSPassenger(void) {
    return (int8_t) TSGetTemperatureBeta(AN0_TEMP_SENS_PASSENGER, TS_PASSENGER_FIXED_R0, TS_PASSENGER_NOMINAL_R0_25C, TS_PASSENGER_B25_50);
@@ -70,7 +70,7 @@ int8_t TSPassenger(void) {
    DESCRIPTION: Read outside mirror air temperature sensor
 
    PARAMETERS: void
-   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30°..50°] C / [-22°..122°] F
+   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30ï¿½..50ï¿½] C / [-22ï¿½..122ï¿½] F
 *** */
 int8_t TSOutsideMirror(void) {
    return (int8_t) TSGetTemperatureBeta(AN1_TEMP_SENS_OUTSIDE, TS_OUTSIDE_FIXED_R0, TS_OUTSIDE_NOMINAL_R0_25C, TS_OUTSIDE_B25_50);
@@ -81,7 +81,7 @@ int8_t TSOutsideMirror(void) {
    DESCRIPTION: Read bottom blended air temperature sensor
 
    PARAMETERS: void
-   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30°..50°] C / [-22°..122°] F
+   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30ï¿½..50ï¿½] C / [-22ï¿½..122ï¿½] F
 *** */
 int8_t TSBottomBlended(void) {
    return (int8_t) TSGetTemperatureBeta(AN2_TEMP_SENS_BOTTOM_BLENDED, TS_BTM_BLENDED_FIXED_R0, TS_BTM_BLENDED_NOMINAL_R0_25C, TS_BTM_BLENDED_B25_50);
@@ -92,7 +92,7 @@ int8_t TSBottomBlended(void) {
    DESCRIPTION: Read top blended air temperature sensor
 
    PARAMETERS: void
-   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30°..50°] C / [-22°..122°] F
+   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30ï¿½..50ï¿½] C / [-22ï¿½..122ï¿½] F
 *** */
 int8_t TSTopBlended(void) {
    return (int8_t) TSGetTemperatureBeta(AN5_TEMP_SENS_TOP_BLENDED, TS_TOP_BLENDED_FIXED_R0, TS_TOP_BLENDED_NOMINAL_R0_25C, TS_TOP_BLENDED_B25_50);
@@ -104,7 +104,7 @@ int8_t TSTopBlended(void) {
                 Not implemented!
 
    PARAMETERS: void
-   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30°..50°] C / [-22°..122°] F
+   RETURN: uint8_t: Temperature in Celsius degrade. From: [-30ï¿½..50ï¿½] C / [-22ï¿½..122ï¿½] F
 *** */
 int8_t TSElectronicSpeedRegulator(void) {
    return (int8_t) TSGetTemperatureBeta(AN4_TEMP_SENS_ELEC_SPEED_REG, 0, 0, 0);

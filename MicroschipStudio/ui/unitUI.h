@@ -2,7 +2,7 @@
  * UnitUI.h
  *
  * Created: 7/12/2016 1:55:24 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */
 
 #ifndef UNITUI_H_

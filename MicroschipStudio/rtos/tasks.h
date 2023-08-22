@@ -2,7 +2,7 @@
  * Tasks.h
  *
  * Created: 2/9/2017 11:27:44 p.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 

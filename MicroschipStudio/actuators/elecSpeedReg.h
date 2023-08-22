@@ -3,7 +3,7 @@
  * elecSpeedReg.h
  *
  * Created: 21/10/2018 9:04:28 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #ifndef ELECSPEEDREG_H_

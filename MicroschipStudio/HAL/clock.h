@@ -2,7 +2,7 @@
  * Clock.h
  *
  * Created: 8/7/2016 2:11:45 a. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #ifndef CLOCK_H

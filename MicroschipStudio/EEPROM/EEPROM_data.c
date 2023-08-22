@@ -2,7 +2,7 @@
  * EEPROM_data.c
  *
  * Created: 10/2/2017 1:08:30 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //-- Includes --//
@@ -124,7 +124,7 @@ void EEPROMSaveDefaultData(void) {
    EEPROMWrite_byte(EEADDRSS_US_AIR_DIST_MOTOR, 0x08);        // 0x08: Air Distribution Motor FRONT position
    EEPROMWrite_byte(EEADDRSS_US_COCK_BLEND_MOTOR, 0x00);      // 0x00: Cock&Blender Motor CLOSED position (No implemented)
    EEPROMWrite_byte(EEADDRSS_US_AIR_INTAKE_MOTOR, 0x00);      // 0x00: Air intake motor CLSED position (No implemented)
-   EEPROMWrite_byte(EEADDRSS_US_TEMPERATURE, 0x18);           // 0x18: 24 °C Temperature
+   EEPROMWrite_byte(EEADDRSS_US_TEMPERATURE, 0x18);           // 0x18: 24 ï¿½C Temperature
    EEPROMWrite_byte(EEADDRSS_US_SPEED, 0x03);                 // 0x03: Air fan motor 2nd Speed
    EEPROMWrite_byte(EEADDRSS_US_LAST_STATE, 0x00);            // 0x00: Last status. 0:OFF, 1:ON, ...
 
@@ -135,15 +135,15 @@ void EEPROMSaveDefaultData(void) {
    EEPROMWrite_byte(EEADDRSS_US_AIR_DIST_MOTOR_WRK, 0x00);    // 0x00: Air Distribution Motor FRONT position
    EEPROMWrite_byte(EEADDRSS_US_COCK_BLEND_MOTOR_WRK, 0x00);  // 0x00: Cock&Blender Motor CLOSED position (No implemented)
    EEPROMWrite_byte(EEADDRSS_US_AIR_INTAKE_MOTOR_WRK, 0x00);  // 0x00: Air intake motor CLSED position (No implemented)
-   EEPROMWrite_byte(EEADDRSS_US_TEMPERATURE_WRK, 0x00);       // 0x00: 24 °C Temperature
+   EEPROMWrite_byte(EEADDRSS_US_TEMPERATURE_WRK, 0x00);       // 0x00: 24 ï¿½C Temperature
    EEPROMWrite_byte(EEADDRSS_US_SPEED_WRK, 0x00);             // 0x00: Air fan motor 2nd Speed
    EEPROMWrite_byte(EEADDRSS_US_LAST_STATE_WRK, 0x00);        // 0x00: Last status. 0:OFF, 1:ON, ...
  
    //Potentiometer values for reading the Air Distribution Motor position
-   EEPROMWrite_word(EEADDRSS_ADM_ADC_FRONT, 0x006E);           // Dec. 110: Position   A=0°
-   EEPROMWrite_word(EEADDRSS_ADM_ADC_FRONT_FEET, 0x0177);      // Dec. 375: Position A-B=60°
-   EEPROMWrite_word(EEADDRSS_ADM_ADC_FEET, 0x0253);            // Dec. 595: Position A-C=113° +/-1
-   EEPROMWrite_word(EEADDRSS_ADM_ADC_WINDSHLD, 0x0393);        // Dec. 915: Position A-D=185°
+   EEPROMWrite_word(EEADDRSS_ADM_ADC_FRONT, 0x006E);           // Dec. 110: Position   A=0ï¿½
+   EEPROMWrite_word(EEADDRSS_ADM_ADC_FRONT_FEET, 0x0177);      // Dec. 375: Position A-B=60ï¿½
+   EEPROMWrite_word(EEADDRSS_ADM_ADC_FEET, 0x0253);            // Dec. 595: Position A-C=113ï¿½ +/-1
+   EEPROMWrite_word(EEADDRSS_ADM_ADC_WINDSHLD, 0x0393);        // Dec. 915: Position A-D=185ï¿½
 
    //This is the OCR2x values for the PWM %DutyCycle
    EEPROMWrite_byte(EEADDRSS_ESR_SPEED1, 0x10);    //

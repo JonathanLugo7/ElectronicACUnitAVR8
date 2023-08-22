@@ -2,7 +2,7 @@
  * elecSpeedReg.c
  *
  * Created: 21/10/2018 9:04:43 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #include "elecSpeedReg.h"

@@ -2,7 +2,7 @@
  * Pinouts.h
  *
  * Created: 22/2/2017 4:46:58 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #ifndef PINOUTS_H_

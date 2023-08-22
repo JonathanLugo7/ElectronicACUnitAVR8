@@ -3,7 +3,7 @@
  * PCF2112CT_asm.S
  *
  * Created: 22/2/2017 4:43:38 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //#define _SFR_ASM_COMPAT 1

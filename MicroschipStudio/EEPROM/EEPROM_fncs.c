@@ -2,7 +2,7 @@
  * EEPROM_fncs.c
  *
  * Created: 17/5/2018 3:36:57 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //-- Includes --//

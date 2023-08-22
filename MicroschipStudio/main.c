@@ -2,7 +2,7 @@
  * ElectronicACUnitAVR8.c
  *
  * Created: 27/1/2017 12:41:17 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //-- Includes --//

@@ -2,7 +2,7 @@
  * config.h
  *
  * Created: 29/3/2018 2:00:21 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 

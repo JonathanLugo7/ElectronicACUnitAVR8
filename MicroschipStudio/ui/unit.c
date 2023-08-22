@@ -2,7 +2,7 @@
  * UnitModel.c
  *
  * Created: 24/10/2017 12:49:20 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #include "unit.h"

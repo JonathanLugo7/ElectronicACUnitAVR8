@@ -2,7 +2,7 @@
  * TempSensor.h
  *
  * Created: 4/3/2017 4:03:25 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */
 
 #ifndef TEMPSENSOR_H_
@@ -20,16 +20,16 @@
 #define TS_PASSENGER_FIXED_R0          1500
 #define TS_OUTSIDE_FIXED_R0            16500
 
-// Fixed nominal temperature resistance values from NTC at 25° C. See Fiat Tempra - Automatic Air Conditional Manual
+// Fixed nominal temperature resistance values from NTC at 25ï¿½ C. See Fiat Tempra - Automatic Air Conditional Manual
 #define TS_TOP_BLENDED_NOMINAL_R0_25C  10000
 #define TS_BTM_BLENDED_NOMINAL_R0_25C  10000
 #define TS_PASSENGER_NOMINAL_R0_25C    2200
 #define TS_OUTSIDE_NOMINAL_R0_25C      10000
 
-// Fixed temperature B25/50 B coefficient values. B = (ln(R1) – ln(R2)) / (1 / T1 - 1 / T2),
+// Fixed temperature B25/50 B coefficient values. B = (ln(R1) ï¿½ ln(R2)) / (1 / T1 - 1 / T2),
 //                                                Ex.: B = ( ln(10000) - ln(3600) ) / ( (1/(25+273.05)) - (1/50+273.15)) )
-//                                                     25° C = 10000 ohm. 25° C = 25+273.15° K = 298.15° K
-//                                                     50° C = 36000 ohm. 50° C = 50+273.15° K = 323.15° K
+//                                                     25ï¿½ C = 10000 ohm. 25ï¿½ C = 25+273.15ï¿½ K = 298.15ï¿½ K
+//                                                     50ï¿½ C = 36000 ohm. 50ï¿½ C = 50+273.15ï¿½ K = 323.15ï¿½ K
 #define TS_TOP_BLENDED_B25_50          3937
 #define TS_BTM_BLENDED_B25_50          3937
 #define TS_PASSENGER_B25_50            4006

@@ -2,7 +2,7 @@
  * lamps.c
  *
  * Created: 12/9/2019 8:00:23 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //-- Includes --//

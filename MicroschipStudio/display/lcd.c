@@ -2,7 +2,7 @@
  * LCD.c
  *
  * Created: 12/12/2016 2:46:22 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //-- Includes --//

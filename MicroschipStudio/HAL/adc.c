@@ -2,7 +2,7 @@
  * ADC.c
  *
  * Created: 7/7/2016 3:28:57 a. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #include "adc.h"

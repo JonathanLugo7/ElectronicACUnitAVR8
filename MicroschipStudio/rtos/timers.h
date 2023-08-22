@@ -2,7 +2,7 @@
  * Timers.h
  *
  * Created: 28/2/2017 3:09:51 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #ifndef TIMERS_H_

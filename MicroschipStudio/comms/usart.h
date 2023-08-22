@@ -2,7 +2,7 @@
  * USART.h
  *
  * Created: 7/7/2016 12:39:02 a. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #ifndef USART_H_

@@ -2,7 +2,7 @@
  * AirDistMotor.h
  *
  * Created: 3/8/2016 6:31:30 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #ifndef AIRDISTMOTOR_H_
@@ -43,10 +43,10 @@ typedef enum tagADM_MOVE {
 } ADM_MOVE;
 
 /* See EEPROM_data.c/h 
-#define ADM_ADC_FRONT         0x0064   // Dec. 100: Position   A=0°
-#define ADM_ADC_FRONT_FEET    0x0177   // Dec. 375: Position A-B=60°
-#define ADM_ADC_FEET          0x0253   // Dec. 595: Position A-C=113° +/-1
-#define ADM_ADC_WINDSHIELD    0x0393   // Dec. 915: Position A-D=185°
+#define ADM_ADC_FRONT         0x0064   // Dec. 100: Position   A=0ï¿½
+#define ADM_ADC_FRONT_FEET    0x0177   // Dec. 375: Position A-B=60ï¿½
+#define ADM_ADC_FEET          0x0253   // Dec. 595: Position A-C=113ï¿½ +/-1
+#define ADM_ADC_WINDSHIELD    0x0393   // Dec. 915: Position A-D=185ï¿½
 */
 
 #define ADM_MAX_POSITION      0x04     // Dec. 4. Air Dist. Motor total positions

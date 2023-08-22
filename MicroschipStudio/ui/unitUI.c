@@ -2,7 +2,7 @@
  * CentralitaUI.c
  *
  * Created: 7/12/2016 1:55:59 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #include "unitUI.h"

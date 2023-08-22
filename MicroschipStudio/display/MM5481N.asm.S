@@ -3,7 +3,7 @@
  * MM5481N_asm.S
  *
  * Created: 22/2/2017 4:44:24 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //#define _SFR_ASM_COMPAT 1

@@ -3,7 +3,7 @@
  * threeLevelSwitch.c
  *
  * Created: 3/1/2019 3:34:20 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 

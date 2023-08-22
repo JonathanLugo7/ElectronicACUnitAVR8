@@ -2,7 +2,7 @@
  * LED.c
  *
  * Created: 25/11/2016 3:18:57 p.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //-- Includes --//

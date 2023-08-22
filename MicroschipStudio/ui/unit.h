@@ -2,7 +2,7 @@
  * UnitModel.h
  *
  * Created: 24/10/2017 12:49:05 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #ifndef UNIT_H_
@@ -41,23 +41,23 @@ typedef enum tagUNIT_STATUS {
 #define UNIT_FLAG_ON          0x01
 
 // Temperature display.                Temperature in Celsius degree
-#define UNIT_TEMP_LOW         0x11  // 17  LO Temperature < 18°C
-#define UNIT_TEMP_18C         0x12  // 18  18°C
-#define UNIT_TEMP_19C         0x13  // 19  19°C
-#define UNIT_TEMP_20C         0x14  // 20  20°C
-#define UNIT_TEMP_21C         0x15  // 21  21°C
-#define UNIT_TEMP_22C         0x16  // 22  22°C
-#define UNIT_TEMP_23C         0x17  // 23  23°C
-#define UNIT_TEMP_24C         0x18  // 24  24°C
-#define UNIT_TEMP_25C         0x19  // 25  25°C
-#define UNIT_TEMP_26C         0x1A  // 26  26°C
-#define UNIT_TEMP_27C         0x1B  // 27  27°C
-#define UNIT_TEMP_28C         0x1C  // 28  28°C
-#define UNIT_TEMP_29C         0x1D  // 29  29°C
-#define UNIT_TEMP_30C         0x1E  // 30  30°C
-#define UNIT_TEMP_31C         0x1F  // 31  31°C
-#define UNIT_TEMP_32C         0x20  // 32  32°C
-#define UNIT_TEMP_HIGH        0x21  // 33  HI Temperature > 32°C
+#define UNIT_TEMP_LOW         0x11  // 17  LO Temperature < 18ï¿½C
+#define UNIT_TEMP_18C         0x12  // 18  18ï¿½C
+#define UNIT_TEMP_19C         0x13  // 19  19ï¿½C
+#define UNIT_TEMP_20C         0x14  // 20  20ï¿½C
+#define UNIT_TEMP_21C         0x15  // 21  21ï¿½C
+#define UNIT_TEMP_22C         0x16  // 22  22ï¿½C
+#define UNIT_TEMP_23C         0x17  // 23  23ï¿½C
+#define UNIT_TEMP_24C         0x18  // 24  24ï¿½C
+#define UNIT_TEMP_25C         0x19  // 25  25ï¿½C
+#define UNIT_TEMP_26C         0x1A  // 26  26ï¿½C
+#define UNIT_TEMP_27C         0x1B  // 27  27ï¿½C
+#define UNIT_TEMP_28C         0x1C  // 28  28ï¿½C
+#define UNIT_TEMP_29C         0x1D  // 29  29ï¿½C
+#define UNIT_TEMP_30C         0x1E  // 30  30ï¿½C
+#define UNIT_TEMP_31C         0x1F  // 31  31ï¿½C
+#define UNIT_TEMP_32C         0x20  // 32  32ï¿½C
+#define UNIT_TEMP_HIGH        0x21  // 33  HI Temperature > 32ï¿½C
 
 // State structure for read/write EEPROM saved data for keep last state and default state of the Electronic A/C Unit
 typedef struct tagUnitState {
@@ -87,10 +87,10 @@ typedef struct tagUnitState {
 
 // Temp. sensors readings
 typedef struct tagTempSensorsInfo {
-   int8_t  TopBlended;              // Top Blended. From -30°C to 50°C
-   int8_t  BottomBlended;           // Bottom Blended. From -30°C to 50°C
-   int8_t  OutsideMirror;           // Outside Mirror. From -30°C to 50°C
-   int8_t  Passenger;               // Passenger Fan. From -20°C to 50°C
+   int8_t  TopBlended;              // Top Blended. From -30ï¿½C to 50ï¿½C
+   int8_t  BottomBlended;           // Bottom Blended. From -30ï¿½C to 50ï¿½C
+   int8_t  OutsideMirror;           // Outside Mirror. From -30ï¿½C to 50ï¿½C
+   int8_t  Passenger;               // Passenger Fan. From -20ï¿½C to 50ï¿½C
 } TEMP_SENSORS_INFO, *pTEMP_SENSORS_INFO;
 
 

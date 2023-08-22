@@ -2,7 +2,7 @@
  * AirDistMotor.c
  *
  * Created: 3/8/2016 6:31:49 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //--- Includes ---//

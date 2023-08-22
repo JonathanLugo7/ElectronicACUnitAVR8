@@ -2,7 +2,7 @@
  * Borad.c
  *
  * Created: 11/7/2016 3:00:04 a. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 //--- Includes ---//

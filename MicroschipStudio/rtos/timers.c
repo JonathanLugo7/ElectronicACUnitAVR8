@@ -2,7 +2,7 @@
  * Timers.c
  *
  * Created: 28/2/2017 3:10:03 a.m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 #include <util/atomic.h>

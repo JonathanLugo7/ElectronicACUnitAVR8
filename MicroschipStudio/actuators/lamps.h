@@ -3,7 +3,7 @@
  * lamps.h
  *
  * Created: 12/9/2019 8:00:09 p. m.
- *  Author: IoT SolucioneX
+ *  Author: IoT SolucioneX (jlugo)
  */ 
 
 
