@@ -1,0 +1,124 @@
+<div class="content" role="main">
+   <hr style="border: 0;">
+   <span style="font-weight: bold;">{{ title }} app is running!</span>
+   <hr style="border: 0;">
+
+   <div class="ac-unit">
+      <img src="images/unit-front.jpg" height="630" width="1669" />
+   </div>
+
+   <!-- LCD Display -->
+   <div id="lcdTemp" *ngIf="signalRService.unitState.LedOn || signalRService.unitState.SymEXT">
+      <img src="images/lcd-temp.jpg" height="102" width="314" />
+   </div>
+   <div id="lcdSpeed" *ngIf="signalRService.unitState.LedOn">
+      <img src="images/lcd-speed.jpg" height="107" width="304" />
+   </div>
+
+   <!-- Symbols -->
+   <div *ngIf="signalRService.unitState.LedOn">
+      <div id="symAUTO" *ngIf="signalRService.unitState.SymAUTO">
+         <img src="images/auto.png" height="19" width="65" />
+      </div>
+      <div id="symMANUAL" *ngIf="signalRService.unitState.SymMANUAL">
+         <img src="images/manual.png" height="19" width="96" />
+      </div>
+   </div>
+
+   <div id="symEXT" *ngIf="signalRService.unitState.SymEXT">
+      <img src="images/ext.png" height="19" width="33" />
+   </div>
+
+   <!-- Temperature -->
+   <div id="temperature" *ngIf="signalRService.unitState.LedOn || signalRService.unitState.SymEXT">
+      {{ signalRService.displayTemp }}
+   </div>
+
+   <!-- Speed -->
+   <div id="speed" *ngIf="signalRService.unitState.LedOn">
+      <img src="images/speed{{ signalRService.unitState.BlowSpeed }}.png"
+           height="50"
+           width="269" />
+   </div>
+
+   <!-- LED Status -->
+   <div id="ledOn" *ngIf="signalRService.unitState.LedOn">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+   <div id="ledAuto" *ngIf="signalRService.unitState.LedOn && signalRService.unitState.LedAuto">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+   <div id="ledEcon" *ngIf="signalRService.unitState.LedOn && signalRService.unitState.LedEcon">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+   <div id="ledReci" *ngIf="signalRService.unitState.LedOn && signalRService.unitState.LedReci">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+   <div id="ledOff" *ngIf="signalRService.unitState.LedOff">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+
+   <!-- LED Air Distribution -->
+   <div id="ledWindshield" *ngIf="signalRService.unitState.LedOn && signalRService.unitState.LedWindshield">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+   <div id="ledFront" *ngIf="signalRService.unitState.LedOn && signalRService.unitState.LedFront">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+   <div id="ledFrontFeet" *ngIf="signalRService.unitState.LedOn && signalRService.unitState.LedFrontFeet">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+   <div id="ledFeet" *ngIf="signalRService.unitState.LedOn && signalRService.unitState.LedFeet">
+      <img src="images/led-on.png" height="20" width="20" />
+   </div>
+
+   <hr style="border: 0;">
+
+   <div id="container" class="container">
+      <div class="row">
+         <div class="col-6 ac-console" #messagesframe>
+            <samp *ngFor="let msg of signalRService.messages">$&gt; {{ msg }}<br></samp>
+         </div>
+
+         <div class="col-2">
+            <div class="row">
+               <div class="col-12">Compressor</div>
+            </div>
+            <hr class="mt-1">
+            <div class="row">
+               <div class="col-12">
+                  <img src="images/ac-compressor{{ signalRService.operationState.ThreeLevelSwitch }}.png" style="margin-left: auto;margin-right: auto;" width="211" height="146">
+               </div>
+            </div>
+         </div>
+
+         <div class="col-4">
+            <div class="row">
+               <div class="col-12">Temperature Sensors Info.</div>
+            </div>
+            <hr class="mt-1">
+            <div class="row">
+               <div class="col-6 g-align-left">
+                  <img src="images/outside-mirror.png" style="vertical-align:bottom">
+                  &nbsp;&nbsp;{{ signalRService.operationState.OutsideTemp }}&deg; Out. Mirror
+               </div>
+               <div class="col-6 g-align-left">
+                  <img src="images/passenger.png" style="vertical-align:bottom">
+                  &nbsp;&nbsp;{{ signalRService.operationState.PassengerTemp }}&deg; Passenger
+               </div>
+            </div>
+            <br />
+            <div class="row">
+               <div class="col-6 g-align-left">
+                  <i class="fas fa-thermometer-three-quarters fa-3x"></i>&nbsp;&nbsp;{{ signalRService.operationState.TopTemp }}&deg; Top blower
+               </div>
+               <div class="col-6 g-align-left">
+                  <i class="fas fa-thermometer-quarter fa-3x"></i>&nbsp;&nbsp;{{ signalRService.operationState.BottomTemp }}&deg; Bottom blower
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<router-outlet></router-outlet>

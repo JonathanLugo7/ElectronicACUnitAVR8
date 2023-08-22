@@ -1,0 +1,154 @@
+
+## Install Apache2
+sudo apt-get update
+sudo apt-get install apache2 apache2-doc
+
+## Enable Apache2 modules
+sudo a2enmod proxy 
+sudo a2enmod proxy_http 
+sudo a2enmod proxy_html 
+sudo a2enmod proxy_wstunnel
+sudo a2enmod rewrite
+sudo a2enmod ssl
+sudo a2enmod headers
+
+## Create self-signed certificate for SSL config
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache2-selfsigned.key -out /etc/ssl/certs/apache2-selfsigned.crt
+
+## Add ServerName /etc/apache2/apache2.conf
+ServerName 192.168.1.119
+
+## Create file web-app.conf
+sudo nano /etc/apache2/conf-available/web-app.conf
+
+# Copy these lines:
+<VirtualHost *:*>
+    RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+</VirtualHost>
+
+<VirtualHost *:80>
+    RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+</VirtualHost>
+
+<VirtualHost *:443>
+   DocumentRoot /var/www/html
+
+   ProxyPreserveHost On
+   ProxyPass / http://127.0.0.1:5000/
+   ProxyPassReverse / http://127.0.0.1:5000/
+
+   ErrorLog /home/ubuntu/web-app/log/apache2-web-app.log
+   CustomLog /home/ubuntu/web-app/log/apache2-access.log common
+
+   SSLEngine on
+
+   SSLProtocol all -SSLv2
+
+   SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:!RC4+RSA:+HIGH:+MEDIUM:!LOW:!RC4
+
+   # Create as self-signed
+   SSLCertificateFile    /etc/ssl/certs/apache-selfsigned.crt
+   SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+</VirtualHost>
+
+## Enable configuration
+sudo a2enconf web-app
+
+   # Disable configuration
+   sudo a2disconf web-app
+
+## Test configuration files
+sudo apache2ctl configtest
+
+## Reload service
+sudo systemctl reload apache2.service
+
+## Restart service
+sudo systemctl restart apache2.service
+
+   # Start/Stop/Status service
+   sudo systemctl start apache2.service
+   sudo systemctl stop apache2.service
+   sudo systemctl status apache2.service
+
+## Configure Serial Port
+
+   # On VM Host
+      # Setup Arduino Virtual Serial Port in COM4 [COM1..4] in Windows Computer Management->Computer Manager->Ports (COM & LPT)
+
+      # VMWare Virtual Machine Add Serial Port Support->Serial0..3 in .vmx file
+      serial0.present = "TRUE"
+      serial0.fileName = "COM1"
+      serial0.startConnected = "FALSE"
+      serial0.irq = 4
+      serial0.baseAddr = 0x3f8
+      serial1.present = "TRUE"
+      serial1.fileName = "COM2"
+      serial1.startConnected = "FALSE"
+      serial1.irq = 3
+      serial1.baseAddr = 0x2f8
+      serial2.present = "TRUE"
+      serial2.fileName = "COM3"
+      serial2.startConnected = "FALSE"
+      serial2.irq = 4
+      serial2.baseAddr = 0x3e8
+      serial3.present = "TRUE"
+      serial3.fileName = "COM4"
+      serial3.startConnected = "TRUE"
+      serial3.irq = 3
+      serial3.baseAddr = 0x2e8
+
+   # On VM Guess
+      # List serial device ports permission
+      ls -l /dev/tty*
+
+      # Give permission for ubuntu user
+      sudo chmod a+rw /dev/ttyS3
+
+      # Update ../web-app/appsettings.json file to any valid virtual serial port (COM1..4->ttyS0..S3)
+      "Port": "/dev/ttyS3"
+
+## Execute WebApp from ../web-app/ for listen any server
+sudo dotnet WebApp.dll --urls "http://*:5000;https://*:5001"
+
+   # From app exe
+   sudo WebApp --urls "http://*:5000;https://*:5001"
+
+
+## Monitoring the web-app
+   
+   # Install supervisor
+   sudo apt-get install supervisor
+   
+   # Create application supervisor file
+   sudo nano /etc/supervisor/conf.d/web-app.conf
+
+   # Verify dotnet path
+   whereis dotnet
+   
+   # Copy these lines:
+   [program:web-app]
+   command=/usr/bin/dotnet /home/ubuntu/app-web-app/WebApp.dll --urls "http://*:5000"
+   directory=/home/ubuntu/app-web-app/
+   autostart=true
+   autorestart=true
+   stderr_logfile=/var/log/web-app.err.log
+   stdout_logfile=/var/log/web-app.out.log
+   environment=ASPNETCORE_ENVIRONMENT=Production
+   user=www-data
+   stopsignal=INT
+
+   # Start supervision 
+   sudo service supervisor stop
+   sudo service supervisor start
+
+   # Check application logs
+   sudo tail -f /var/log/supervisor/supervisord.log
+   sudo tail -f /var/log/web-app.err.log
+   sudo tail -f /var/log/web-app.out.log
+
+
+## Find your Server’s Public IP Address
+ip addr show ens33 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'

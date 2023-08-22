@@ -1,0 +1,167 @@
+li {
+   list-style-type: none;
+   margin-left: -30px;
+}
+
+@font-face {
+   font-family: "DSEG7-Classic-MINI";
+   src: url("/fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Bold.woff2") format("woff2"), url("/fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Bold.woff") format("woff"), url("/fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Bold.ttf") format("truetype");
+   font-weight: bold;
+   font-style: normal;
+}
+
+.content {
+   position: relative;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 16pt;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.ac-unit {
+   vertical-align: middle;
+}
+
+.ac-console {
+   text-align: left;
+   font-family: Consolas;
+   font-size: 13pt;
+   background-color: black;
+   color: yellow;
+   border-left: 2px solid gray;
+   border-top: 2px solid gray;
+   border-right: 2px solid lightgray;
+   border-bottom: 2px solid lightgray;
+   margin: 0 auto;
+   padding: 0px;
+   overflow: auto;
+   word-wrap: break-word;
+   min-height: 210px;
+   max-height: 210px;
+}
+
+#container {
+   min-width: 1669px;
+   text-align: center;
+}
+
+#ledOn {
+   position: absolute;
+   top: 153px;
+   left: 874px;
+   z-index: 2;
+}
+
+#ledAuto {
+   position: absolute;
+   top: 191px;
+   left: 874px;
+   z-index: 2;
+}
+
+#ledEcon {
+   position: absolute;
+   top: 309px;
+   left: 873px;
+   z-index: 2;
+}
+
+#ledReci {
+   position: absolute;
+   top: 441px;
+   left: 871px;
+   z-index: 2;
+}
+
+#ledOff {
+   position: absolute;
+   top: 575px;
+   left: 870px;
+   z-index: 2;
+}
+
+#ledWindshield {
+   position: absolute;
+   top: 165px;
+   left: 1391px;
+   z-index: 2;
+}
+
+#ledFront {
+   position: absolute;
+   top: 307px;
+   left: 1391px;
+   z-index: 2;
+}
+
+#ledFrontFeet {
+   position: absolute;
+   top: 438px;
+   left: 1391px;
+   z-index: 2;
+}
+
+#ledFeet {
+   position: absolute;
+   top: 572px;
+   left: 1392px;
+   z-index: 2;
+}
+
+#lcdTemp {
+   position: absolute;
+   top: 116px;
+   left: 277px;
+   z-index: 2;
+}
+
+#lcdSpeed {
+   position: absolute;
+   top: 392px;
+   left: 290px;
+   z-index: 2;
+}
+
+#symAUTO {
+   position: absolute;
+   top: 458px;
+   left: 508px;
+   z-index: 2;
+}
+
+#symMANUAL {
+   position: absolute;
+   top: 459px;
+   left: 312px;
+   z-index: 2;
+}
+
+#symEXT {
+   position: absolute;
+   top: 151px;
+   left: 515px;
+   z-index: 2;
+}
+
+#temperature {
+   position: absolute;
+   top: 130px;
+   left: 300px;
+   z-index: 2;
+   font-family: DSEG7-Classic-MINI;
+   font-weight: bold;
+   font-size: 38pt;
+   letter-spacing: 5pt;
+   color: #39ea41;
+   text-align: right;
+   width: 190px;
+   padding: 0px;
+   margin: 0px;
+}
+
+#speed {
+   position: absolute;
+   top: 408px;
+   left: 307px;
+   z-index: 2;
+}

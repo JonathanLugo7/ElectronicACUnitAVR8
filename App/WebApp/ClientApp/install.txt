@@ -1,0 +1,5 @@
+npm install --save @microsoft/signalr
+npm install --save jquery
+npm install --save popper.js
+npm install --save bootstrap
+npm install --save @fortawesome/fontawesome-free

@@ -1,0 +1,322 @@
+===========================
+=   Motor Aire Caliente   =
+===========================
+
+Blended Flat Motor & COCK. Fig 243 Diagrama
+
+Amarillo y Azul: Motor +/-
+Naranja: Potenciometro -0V
+Violeta: Potenciometro +5V
+Gris: Valor Potenciometro --/\/\/\--
+
+Posición 1 - COCK Closed (Totalmente a la derecha)
+   K= 15° +/- 30'
+   0.85V
+   900Ohm
+   
+Posición 2 - COCK Open & Blender Closed
+   Y= 85°
+   2.64V
+   2430ohm
+
+Posición 3 - COCK Open & Blender Closed (Totalmente a la izquierda)
+   Z= 170° - 175°
+   4.43V
+   4000Ohm
+   
+
+=========================
+   Motor Dist. Aire
+=========================
+
+Air Distribution Motor. Fig 244 Diagrama
+
+---------------------------------------------------------------------------------------------
+| Conector | Cable      (Cod) |  Diagrama  | NOTA                                           |
+---------------------------------------------------------------------------------------------
+|    P1    | Blanco      (B)  | Motor V-   | L293D[1].OUT2->CONB.5; L293D[1].IN2->PIN56.PD1 |
+|    P2    | Blanco/Azul (BL) | Motor V+   | L293D[1].OUT1->CONB.6; L293D[1].IN1->PIN55.PD0 |
+|    P3    | Naranja     (C)  | Pot. 0V    | GND comun centralita                           |  
+|    P4    | Verde       (V)  | Valor Pot. | uM P37.AN3                                     |  
+|    P5    | Azul Claro  (A)  | Pot. +5V   | Motor es violeta                               | 
+|    P6    | N/C              | N/C        | N/C                                            | 
+---------------------------------------------------------------------------------------------
+
+Posición A (Totalmente a la Der.)
+   Descripción: Salida de aire hacia el frente, centro y laterales.
+   Valores atMega328P:
+   
+      Angulo a = -5°
+      Vin: 5.0
+      uintPotBlendMotor [ADC: 0-1023]: 70 +/-
+      Voltaje: 0.342131V
+      
+Posición B
+   Descripción: Salida de aire hacia el frente, centro, laterales y pies.
+   Valores atMega328P:
+
+      Angulo[A-B] K = 60°
+      Vin: 5.0
+      uintPotBlendMotor [ADC: 0-1023]: 373 +/-
+      Voltaje: 1.823069V
+
+Angulo: 60°
+Posición C
+   Descripción: Salida de aire hacia los pies.
+   Valores atMega328P:
+   
+      Angulo[A-C] Y = 113° +/- 1°
+      Vin: 5.0
+      uintPotBlendMotor [ADC: 0-1023]: 570 +/-
+      Voltaje: 2.800586V
+      
+Posición D (Totalmente a la Izq.)
+   Descripción: Salida de aire hacia el parabrisa
+   Valores atMega328P:
+   
+      Angulo[A-D] Z = 183°-185°
+      Vin: 5.0
+      uintPotBlendMotor [ADC: 0-1023]: 900 +/-
+      Voltaje: 4.398827V
+
+
+========================================
+   Conector Tarjeta Principal/Frontal
+========================================
+
+|--------------------------------------------------------------------------------------------------------------------|
+| Conector |  Tarjeta Principal - MCU                      |  Tarjeta Frontal - UI                                   |
+|--------------------------------------------------------------------------------------------------------------------|
+| CON1.1   | mPD78C14.PB1                                  | PCF2112.CLOCK_BUSTER                                    |
+| CON1.2   | mPD78C14.PB2                                  | PCF2112.DATA                                            |
+| CON1.3   | mPD78C14.PB0                                  | PCF2112.DATA_ENABLE                                     |
+| CON1.4   | CON4.1(Z)-LUZ_LCD_V+                          | Bombillos LCD V+                                        |
+| CON1.5   | CON3.1(GN)-LUZ_PPL_V+ (Luz Cortesia)          | Bombillos Frontal Vdd (V12+)                            |
+| CON1.6   | CON5.4(MN)-LUZ_PPL_V- (Luz Cortesia)          | Bombillos Frontal Vss (GND)                             |
+| CON1.7   | L4947_VOLTAGE_REG.RESET (+5V)                 | PCF2112.Vdd                                             |
+|--------------------------------------------------------------------------------------------------------------------|
+| CON2.1   | C2274.Collector/Base<-mPD78C14.PD7            | Bombillo LCD Temperatura Vss (GND)                      |
+| CON2.2   | mPD78C14.PA0 (KEYPAD.ROW0)                    | SW EXT, Velocidad-, Velocidad+, Temperatura-            |
+| CON2.3   | mPD78C14.PA7 (KEYPAD.COL3)                    | SW EXT                                                  |
+| CON2.4   | L4947_VOLTAGE_REG.Vout, mPD78C14.PC1-PC3      | LEDs.Vdd, MM5481.Vdd                                    | 
+| CON2.5   | C2274.Collector/Base<-mPD78C14.PC4            | Bombillo LCD Velocidad Vss (GND)                        |
+| CON2.6   | mPD78C14.PA5 (KEYPAD.COL1)                    | SW Velocidad-, Off, Frontal, Eco                        |
+| CON2.7   | mPD78C14.PA4 (KEYPAD.COL0)                    | SW Temperatura-, Recircular, Frontal/Pies, Temperatura+ |
+| CON2.8   | mPD78C14.PA3 (KEYPAD.ROW3)                    | SW Temperatura+, Eco, Auto                              |
+| CON2.9   | mPD78C14.PA6 (KEYPAD.COL2)                    | SW Velocidad+, Pies, Windshield, Auto                   |
+| CON2.10  | mPD78C14.PA1 (KEYPAD.ROW1)                    | SW Recircular, Off, Pies                                |
+| CON2.11  | mPD78C14.PF2                                  | MM5481.DATA_ENABLE                                      |
+| CON2.12  | mPD78C14.PF0                                  | MM5481.DATA_IN                                          |
+| CON2.13  | mPD78C14.PF1                                  | MM5481.CLOCK                                            |
+| CON2.14  | T3.C2274.Collector/T2.C2274.Base-CON3.1(GN)   | MM5481.BRIGHT_CONTROL                                   |
+| CON2.15  | CON5.11-L4947PD(U2).GND                       | Vss (GND)                                               |
+| CON2.16  | mPD78C14.PA2 (KEYPAD.ROW2)                    | SW Frontal/Pies, Frontal, Windshield                    |
+|--------------------------------------------------------------------------------------------------------------------|
+| Conector |  Tarjeta Principal - MCU                      |  Sistema de Aire Acondicionado                          |
+|--------------------------------------------------------------------------------------------------------------------|
+| CON3.1   | LUZ_PPL_V+                                    | Fusiblera Relay E13 Side Light [GN] (Fig. 50)           |
+| CON3.2   | mPD78C14.PD6->L239D.3A->3Y                    | Three level pressure switch [NZ] (Fig. 229)             |
+| CON3.3   | LM2904.1OUT                                   | Electric Speed Reg. PWM DC Blower Controller (Fig. 239) |
+| CON3.4   | N.C.                                          | N.C                                                     |
+| CON3.5   | mPD78C14.PC5(CI)                              | Pulse generator speedometer [A] (Fig. 41)               |
+| CON3.6   | GND                                           | Electric Speed Reg. NTC Temp sensor - [S] (Fig. 239)    |
+|--------------------------------------------------------------------------------------------------------------------|
+| CON4.1   | LUZ_LCD_V+                                    | Joint A/A (Fig. 52.B)                                   |
+| CON4.2   | mPD78C14.AN7                                  | AirCock&BlendingFlapMotor Potenciometer [HN](Fig. 243)  |
+| CON4.3   | mPD78C14.PD3->L239D.4A->4Y                    | AirCock&BlendingFlapMotor V- [G](Fig. 243)              |
+| CON4.4   | mPD78C14.PD2->L239D.3A->3Y                    | AirCock&BlendingFlapMotor V+ [L](Fig. 243)              |
+| CON4.5   | mPD78C14.PD1->L239D.2A->2Y                    | AirDistMotor V- [B] (Fig. 244)                          |
+| CON4.6   | mPD78C14.PD0->L239D.1A->1Y                    | AirDistMotor V+ [BL] (Fig. 244)                         |
+| CON4.7   | L4947_VOLTAGE_REG.Vout                        | AirCock&BlendingFlapMotor/AirDistMotor POT +5V          |
+| CON4.8   | mPD78C14.AN3                                  | AirDistMotor Potenciometer [V] (Fig. 244)               |
+| CON4.9   | mPD78C14.PD5->L239D.2A->2Y                    | AirIntakeFlapMotor V+ [AR] (Fig. 242)                   |
+| CON4.10  | mPD78C14.PD4->L239D.1A->1Y                    | AirIntakeFlapMotor V- [M] (Fig. 242)                    |
+|--------------------------------------------------------------------------------------------------------------------|
+| CON5.1   | mPD78C14.PF4                                  | A/A Diagnostic Joint                                    |
+| CON5.2   | NPN-BC33.BASE                                 | A/A Diagnostic Joint                                    |
+| CON5.3   | mPD78C14.AN4                                  | Electric Speed Reg. NTC Temp Sensor Sig [HV] (Fig. 239) |
+| CON5.4   | LUZ_PPL_V-                                    | GND Driver Side (Fig. 60)                               |
+| CON5.5   | mPD78C14.AN5                                  | Top Blend Air Temp. Sensor [BV] (Fig. 237)              |
+| CON5.6   | L4947_VOLTAGE_REG.GND                         | A/A Shunt point insulated from earth [HN] (Fig. 240)    |
+| CON5.7   | mPD78C14.AN0                                  | Motor Fan Passanger Temp. Sensor [BL] (Fig. 236)        |
+| CON5.8   | mPD78C14.AN1                                  | Outside Mirror Temp. Sensor [B] (Fig. 42)               |
+| CON5.9   | mPD78C14.AN2                                  | Bottom Blend Air Temp. Sensor [AR] (Fig. 238)           |
+| CON5.10  | mPD78C14.Vdd +5V                              | A/A Lead Joint, Radio +12V                              |
+| CON5.11  | L4947_VOLTAGE_REG.GND                         | Joint Engine Lead vs. Facia Lead (GND)                  |
+| CON5.12  | 12V+                                          | Joint A/A (Fig. 52.A)/Pass. Fan w/Temp Sens (Fig. 236)  |
+|--------------------------------------------------------------------------------------------------------------------|
+
+
+=================================
+   Analog to Digital Converter 
+=================================
+
+----------------------------------------------------------------------------
+| PORT | Conector | Descripcion                                            |
+----------------------------------------------------------------------------
+| AN0  | CON5.7   | Motor Fan Passanger Temp. Sensor [BL] (Fig. 236)       |
+| AN1  | CON5.8   | Outside Mirror Temp. Sensor [B] (Fig. 42)              |
+| AN2  | CON5.9   | Bottom Blend Air Temp. Sensor [AR] (Fig. 238)          |
+| AN3  | CON4.8   | AirDistMotor Potenciometer [V] (Fig. 244)              |
+| AN4  | CON5.3   | Electric Speed Reg. NTC Sensor [HV] (Fig. 239)         |
+| AN5  | CON5.5   | Top Blend Air Temp. Sensor [BV] (Fig. 237)             |
+| AN6  | N/A      | L4947_VOLTAGE_REG.Vout                                 |
+| AN7  | CON4.2   | AirCock&BlendingFlapMotor Potenciometer [HN](Fig. 243) |
+----------------------------------------------------------------------------
+
+NOTA: AN6 Está conectado a la salida del Regulador de voltaje L4947_VOLTAGE_REG.Vout
+
+ 
+========================
+   Matriz de Switches
+========================
+----------------------------------------
+| PORT |  PA4  |  PA5  |  PA6  |  PA7  |
+----------------------------------------
+| PA0  | Temp- | Velo- | Velo+ | T.Ext |
+| PA1  | Recir | Off   | Pies  |  N/C  |
+| PA2  | Fr/Ps | Frent | WndSh |  N/C  |
+| PA3  | Temp+ | Econ  | Auto  |  N/C  |
+----------------------------------------
+
+
+========================
+   Matriz de Switches
+========================
+----------------------------------------
+| PORT |  PB4  |  PB5  |  PB6  |  PB7  |
+----------------------------------------
+| PB0  | Temp- | Velo- | Velo+ | T.Ext |
+| PB1  | Recir | Off   | Pies  |  N/C  |
+| PB2  | Fr/Ps | Frent | WndSh |  N/C  |
+| PB3  | Temp+ | Econ  | Auto  |  N/C  |
+----------------------------------------
+
+
+=========================================
+   Segmentos LCD Temperatura - 17 Seg.
+=========================================
+-------------------------------------------------------
+| LCD PORT Izq. | PCF2112  | PCF2112  | LCD PORT Der. |
+-------------------------------------------------------
+| LCD_TempIzq.1 | [27].S10 | [31].S6  | LCD_TempDer.1 |
+| LCD_TempIzq.2 | [28].S9  | [36].S1  | LCD_TempDer.2 |
+| LCD_TempIzq.3 | [23].S14 | [35].S2  | LCD_TempDer.3 |
+| LCD_TempIzq.4 | [26].S11 | [34].S3  | LCD_TempDer.4 |
+| LCD_TempIzq.5 | [20].S17 | [19].S18 | LCD_TempDer.5 |
+| LCD_TempIzq.6 | [15].S22 | [33].S4  | LCD_TempDer.6 |
+| LCD_TempIzq.7 | [22].S15 | [32].S5  | LCD_TempDer.7 |
+| LCD_TempIzq.8 | [24].S13 | [30].S7  | LCD_TempDer.8 |
+| LCD_TempIzq.9 | [38].BP  | [25].S12 | LCD_TempDer.9 |
+-------------------------------------------------------
+========================================
+   Segmentos LCD Velocidad - 11 Segs.
+========================================
+-------------------------------------------------------
+| LCD PORT Izq. | PCF2112  | PCF2112  | LCD PORT Der. |
+-------------------------------------------------------
+| LCD_VelcIzq.1 | [11].S26 | [ 8].S29 | LCD_VelcDer.1 |
+| LCD_VelcIzq.2 | [12].S25 | [ 7].S30 | LCD_VelcDer.2 |
+| LCD_VelcIzq.3 | [38].BP  | [ 6].S31 | LCD_VelcDer.3 |
+| LCD_VelcIzq.4 | [10].S27 | [16].S21 | LCD_VelcDer.4 |
+| LCD_VelcIzq.5 | [ 9].S28 | [ 5].S32 | LCD_VelcDer.5 |
+| LCD_VelcIzq.6 | [18].S19 | [17].S20 | LCD_VelcDer.6 |
+-------------------------------------------------------
+
+NOTA: PCF2112CT = 32Segs.
+      LCD Temperatura: 18 Pads = 17Segs. + 1 BP (Comm.)
+        LCD Velocidad: 12 Pads = 11Segs. + 1 BP (Comm.)
+                Total: 28Segs. Segs. Libres: 4 (S8, S16, S23, S24)
+
+==========================
+   LCD Display Segments 
+==========================
+
+          DIGIT2  DIGIT1
+           __9      __1
+      | 14|  |10  6|  |2
+ -- 22|    --11     --3     EXT
+ 17   | 15|__|12  7|__|4    18
+             13       5
+
+     D1 D2 D3 D4 D5 D6 D7 D8        
+    |[]|[]|[]|[]|[]|[]|[]|[]|
+  21|[]|[]|[]|[]|[]|[]|[]|[]|
+     25 26 27 28 29 30 31 32    
+
+     MANUAL              AUTO
+       19                 20 
+       
+=====================================
+   LCD Display Segments Data Frame
+=====================================
+
+ MSB                                                                                         LSB
+|-----------------------------------------------------------------------------------------------|
+|         SPEED         |   ESPECIAL SYMBOLS    |        DIGIT2         |        DIGIT1         |
+|D8 D7 D6 D5 D4 D3 D2 D1|      CN SS AT ML XT MS|                       |                       |  
+|-----------------------------------------------------------------------------------------------|
+|32|31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|09|08|07|06|05|04|03|02|01|
+|-----------------------------------------------------------------------------------------------|
+|  |  |  |  |  |  |  |  |XX|XX|  |  |  |  |  |  |XX|  |  |  |  |  |  |  |XX|  |  |  |  |  |  |  |
+|-----------------------------------------------------------------------------------------------|
+
+D1:D8=Passanger Compartment Fan Speed 1..8
+MS: Minus Sign
+XT: Extern Temperature
+ML: MANUAL
+AT: AUTO
+SS: Speed Separator
+CN: Hundreds
+XX: Not Used
+
+
+=========================
+   Temperature Sensors
+=========================
+
+         Fixed R1.
+   +5V --/\/\/\---|   N.T.C
+         Fixed R2 |---/\/\/\--GND
+       --/\/\/\---|
+       |
+      ANin           
+
+Top Blended
+   Fixed R1: 3920 Ohm
+   Fixed R2: 22.2 KOhm
+     Bandas: |ORANGE|WHITE|RED|BROWN|BROWN|RED       |
+             | 3    | 9   | 2 | *10 | 1%  | 50 ppm/K |
+   
+Bottom Blended
+   Fixed R1: 3920 Ohm
+   Fixed R2: 22.2 KOhm
+     Bandas: |ORANGE|WHITE|RED|BROWN|BROWN|RED       |
+             | 3    | 9   | 2 | *10 | 1%  | 50 ppm/K |
+
+Passenger
+   Fixed R1: 1500 Ohm
+   Fixed R2: 22.2 KOhm
+     Bandas: |BROWN|GREEN|RED |     |     |BROWN     |
+             | 1   | 5   |*100|     |     | 50 ppm/K |
+
+Outside mirror
+   Fixed R1: 16500 Ohm
+   Fixed R2: 22.2 KOhm
+     Bandas: |BROWN|BLUE|GREEN|RED |BROWN|RED       |
+             | 1   | 6  | 5   |*100| 1%  | 50 ppm/K |
+
+
+=========================
+ Blower Speed Controller
+=========================
+
+Speed | PWM Duty | OCR 
+  01      40%      107
+  02      48%      122  
+  03      57%      145
+  04      65%      166
+  05      74%      189
+  06      82%      209
+  07      91%      232
+  08     100%      255
